@@ -23,7 +23,7 @@ class Server:
         serverSock.bind((UDP_IP_ADDRESS, UDP_PORT_NO))
 
         while self.running:
-            data, _ = serverSock.recvfrom(1024*1024)
+            data, _ = serverSock.recvfrom(1024)
             argb: List[int] = json.loads(data)
             try:
                 if self.prev_data == None or data != self.prev_data:
